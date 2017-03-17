@@ -10,7 +10,7 @@ class OauthDemoWidget extends WP_Widget {
 	function widget( $args, $instance ) {
 		// Widget output
 		?>
-		<div class="oath-demo-widget">
+		<div class="oath-demo-widget loading">
 			<form id="oauth-connect-form">
 			<h3>OAuth Credentials</h3>
 			<p>
@@ -18,7 +18,7 @@ class OauthDemoWidget extends WP_Widget {
 					<label for="oauth-site">WordPress Site</label>
 				</div>
 				<div>
-					<input type="text" class="regular-text" name="oath-site" id="oauth-site" placeholder="http://yoursite.com" value="http://demo.localhost/">
+					<input type="text" class="regular-text" name="oath-site" id="oauth-site" placeholder="http://yoursite.com" value="http://wpdev.localhost/">
 				<p class="description">The URL of the WordPress site you want to connect to.</p>
 				</div>
 			</p>
@@ -27,7 +27,7 @@ class OauthDemoWidget extends WP_Widget {
 					<label for="oauth-clientkey">Client Key</label>
 				</div>
 				<div>
-					<input type="text" class="regular-text" name="oauth-clientkey" id="oauth-clientkey" placeholder="" value="BrJCeu1O2fOS">
+					<input type="text" class="regular-text" name="oauth-clientkey" id="oauth-clientkey" placeholder="" value="8fJDqwctqdFf">
 				<p class="description"></p>
 				</div>
 			</p>
@@ -36,7 +36,7 @@ class OauthDemoWidget extends WP_Widget {
 					<label for="oauth-clientsecret">Client Secret</label>
 				</div>
 				<div>
-					<input type="text" class="regular-text" name="oauth-clientsecret" id="oauth-clientsecret" placeholder="" value="AaGkONzHucixHO9Mp5YuqFv3KJqWLwh9GkqSuNUh8KIsnckW">
+					<input type="text" class="regular-text" name="oauth-clientsecret" id="oauth-clientsecret" placeholder="" value="EFBoVjpjo9oVZKSEHZxO96jHpzU4tlbKzN6BowKOjLXvNPF2">
 				<p class="description"></p>
 				</div>
 			</p>
