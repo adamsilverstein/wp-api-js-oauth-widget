@@ -51,7 +51,8 @@ class OauthDemoWidget extends WP_Widget {
 			</div>
 		</div>
 		<style>
-			.oath-demo-widget.loading form {
+			.oath-demo-widget.loading form,
+			.oath-demo-widget.loggedin form {
 				display: none;
 			}
 			.oath-loader {
