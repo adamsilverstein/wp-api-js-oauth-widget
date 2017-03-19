@@ -17,12 +17,15 @@ add_action( 'widgets_init', __NAMESPACE__ . '\oauth_add_demo_widget' );
  */
 function oath_add_demo_widget_scripts() {
 
-	$OAuthDetails = array(
-		'clientKey'    => '8fJDqwctqdFf',
-		'clientSecret' => 'EFBoVjpjo9oVZKSEHZxO96jHpzU4tlbKzN6BowKOjLXvNPF2',
+	$OAuthWidgetSettings = array(
+		'credentials' => array(
+			'clientKey'    => '8fJDqwctqdFf',
+			'clientSecret' => 'EFBoVjpjo9oVZKSEHZxO96jHpzU4tlbKzN6BowKOjLXvNPF2',
+		),
+		'postId' => get_the_id(),
 	);
-	wp_enqueue_script( 'oauth-demo-widget', plugins_url( 'js/oauth-demo-widget.js', __FILE__ ), array( 'jquery', 'wp-api' ) );
-	wp_localize_script( 'oauth-demo-widget', 'OAuthWidgetCredentials', $OAuthDetails );
+	wp_enqueue_script( 'oauth-demo-widget', plugins_url( 'js/oauth-demo-widget.js', __FILE__ ), array( 'jquery', 'wp-api', 'wp-backbone' ) );
+	wp_localize_script( 'oauth-demo-widget', 'OAuthWidgetSettings', $OAuthWidgetSettings );
 }
 add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\oath_add_demo_widget_scripts' );
 
