@@ -12,13 +12,8 @@ class OauthDemoWidget extends WP_Widget {
 		?>
 		<div class="oauth-demo-widget loading">
 			<div class="oauth-loggedin">
-				OAuth ready.
-				<div class="post-edit-container">
-				</div>
-				<script type="text/html" id="tmpl-post-edit">
-					<label for="oauth-post-title">Title</label>
-					<input type="text" name="oauth-post-title" value="{{ data.title }}" />
-				</script>
+				OAuth ready. Click the title to edit.
+
 			</div>
 			<form id="oauth-connect-form">
 			<h3>OAuth Credentials</h3>
