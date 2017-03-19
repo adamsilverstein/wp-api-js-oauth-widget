@@ -11,6 +11,9 @@ class OauthDemoWidget extends WP_Widget {
 		// Widget output
 		?>
 		<div class="oath-demo-widget loading">
+			<div class="oauth-loggedin">
+				OAuth ready.
+			</div>
 			<form id="oauth-connect-form">
 			<h3>OAuth Credentials</h3>
 			<p>
@@ -22,23 +25,7 @@ class OauthDemoWidget extends WP_Widget {
 				<p class="description">The URL of the WordPress site you want to connect to.</p>
 				</div>
 			</p>
-			<p>
-				<div scope="row">
-					<label for="oauth-clientkey">Client Key</label>
-				</div>
-				<div>
-					<input type="text" class="regular-text" name="oauth-clientkey" id="oauth-clientkey" placeholder="" value="8fJDqwctqdFf">
-				<p class="description"></p>
-				</div>
-			</p>
-			<p>
-				<div scope="row">
-					<label for="oauth-clientsecret">Client Secret</label>
-				</div>
-				<div>
-					<input type="text" class="regular-text" name="oauth-clientsecret" id="oauth-clientsecret" placeholder="" value="EFBoVjpjo9oVZKSEHZxO96jHpzU4tlbKzN6BowKOjLXvNPF2">
-				<p class="description"></p>
-				</div>
+
 			</p>
 			<p class="submit">
 				<input type="submit" name="submit-oauth-signup" id="submit-oauth-signup" class="button button-primary" value="Connect"
@@ -52,14 +39,16 @@ class OauthDemoWidget extends WP_Widget {
 		</div>
 		<style>
 			.oath-demo-widget.loading form,
-			.oath-demo-widget.loggedin form {
+			.oath-demo-widget.loggedin form,
+			.oath-demo-widget .oauth-loggedin {
 				display: none;
 			}
 			.oath-loader {
 			text-align: center;
 			display: none;
 			}
-			.oath-demo-widget.loading .oath-loader {
+			.oath-demo-widget.loading .oath-loader,
+			.oath-demo-widget.loggedin .oauth-loggedin {
 				display: inline-block;
 			}
 			.oath-loader span {

@@ -21,9 +21,7 @@
 		$( '#submit-oauth-signup' ).on( 'click', function( e ) {
 			e.preventDefault();
 			console.log( 'Signin!' );
-			var site         = $container.find( '#oauth-site' ).val(),
-				clientkey    = $container.find( '#oauth-clientkey' ).val(),
-				clientsecret = $container.find( '#oauth-clientsecret' ).val();
+			var site         = $container.find( '#oauth-site' ).val();
 
 
 			if ( 'undefined' === typeof wp.oauth ) {
@@ -34,8 +32,8 @@
 			$container.addClass('loading');
 
 			wp.oauth.connect(
-				clientkey,
-				clientsecret,
+				OAuthWidgetCredentials.clientKey,
+				OAuthWidgetCredentials.clientSecret,
 				site + 'oauth1/request',
 				site + 'oauth1/authorize',
 				site + 'oauth1/access'
