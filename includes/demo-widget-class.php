@@ -10,9 +10,15 @@ class OauthDemoWidget extends WP_Widget {
 	function widget( $args, $instance ) {
 		// Widget output
 		?>
-		<div class="oath-demo-widget loading">
+		<div class="oauth-demo-widget loading">
 			<div class="oauth-loggedin">
 				OAuth ready.
+				<div class="post-edit-container">
+				</div>
+				<script type="text/html" id="tmpl-post-edit">
+					<label for="oauth-post-title">Title</label>
+					<input type="text" name="oauth-post-title" value="{{ data.title }}" />
+				</script>
 			</div>
 			<form id="oauth-connect-form">
 			<h3>OAuth Credentials</h3>
@@ -21,7 +27,7 @@ class OauthDemoWidget extends WP_Widget {
 					<label for="oauth-site">WordPress Site</label>
 				</div>
 				<div>
-					<input type="text" class="regular-text" name="oath-site" id="oauth-site" placeholder="http://yoursite.com" value="http://wpdev.localhost/">
+					<input type="text" class="regular-text" name="oauth-site" id="oauth-site" placeholder="http://yoursite.com" value="http://wpdev.localhost/">
 				<p class="description">The URL of the WordPress site you want to connect to.</p>
 				</div>
 			</p>
@@ -31,27 +37,27 @@ class OauthDemoWidget extends WP_Widget {
 				<input type="submit" name="submit-oauth-signup" id="submit-oauth-signup" class="button button-primary" value="Connect"
 			></p>
 			</form>
-			<div class="oath-loader">
+			<div class="oauth-loader">
 				<span></span>
 				<span></span>
 				<span></span>
 			</div>
 		</div>
 		<style>
-			.oath-demo-widget.loading form,
-			.oath-demo-widget.loggedin form,
-			.oath-demo-widget .oauth-loggedin {
+			.oauth-demo-widget.loading form,
+			.oauth-demo-widget.loggedin form,
+			.oauth-demo-widget .oauth-loggedin {
 				display: none;
 			}
-			.oath-loader {
+			.oauth-loader {
 			text-align: center;
 			display: none;
 			}
-			.oath-demo-widget.loading .oath-loader,
-			.oath-demo-widget.loggedin .oauth-loggedin {
+			.oauth-demo-widget.loading .oauth-loader,
+			.oauth-demo-widget.loggedin .oauth-loggedin {
 				display: inline-block;
 			}
-			.oath-loader span {
+			.oauth-loader span {
 			display: inline-block;
 			vertical-align: middle;
 			width: 10px;
@@ -62,11 +68,11 @@ class OauthDemoWidget extends WP_Widget {
 			-webkit-animation: loader 0.9s infinite alternate;
 			-moz-animation: loader 0.9s infinite alternate;
 			}
-			.oath-loader span:nth-of-type(2) {
+			.oauth-loader span:nth-of-type(2) {
 			-webkit-animation-delay: 0.3s;
 			-moz-animation-delay: 0.3s;
 			}
-			.oath-loader span:nth-of-type(3) {
+			.oauth-loader span:nth-of-type(3) {
 			-webkit-animation-delay: 0.6s;
 			-moz-animation-delay: 0.6s;
 			}
